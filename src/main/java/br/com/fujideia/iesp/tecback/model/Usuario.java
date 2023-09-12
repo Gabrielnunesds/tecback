@@ -1,36 +1,26 @@
 package br.com.fujideia.iesp.tecback.model;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.validator.constraints.br.CPF;
 
-import java.util.List;
+import java.io.Serializable;
 
-@Entity
 @Getter
 @Setter
-public class Usuario {
+@Entity
+@Table(name = "tb_usuario")
+
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue
-    private int id;
-
-
-    private String login;
-
-    @NotNull
-    private Integer anoNascimento;
+    private Integer id;
 
     private String nome;
 
-    private String sobrenome;
-    private String cpf;
     private String email;
-    @OneToMany
-    private List<Favoritos> listaFavoritos;
-
 }

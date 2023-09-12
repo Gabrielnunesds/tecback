@@ -50,10 +50,6 @@ public class FilmeController {
     }
 
 
-    @GetMapping("/titulo/{titulo}")
-     public ResponseEntity<List<Filme>> listarFilmePorTitulo(@PathVariable String titulo){
-        return ResponseEntity.ok(service.listarFilmePorTitulo(titulo));
-     }
 
 
 }

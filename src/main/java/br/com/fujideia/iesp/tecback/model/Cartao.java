@@ -8,18 +8,24 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_genero")
-public class Genero implements Serializable {
+@Table(name = "tb_cartao")
+public class Cartao implements Serializable {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Integer numeroDoCartao;
 
-    private String titulo;
+    private LocalDate dataDeValidade;
 
+    private Integer cvv;
+
+    private String nomeDoTitular;
+
+    private Integer cpf;
 
 }

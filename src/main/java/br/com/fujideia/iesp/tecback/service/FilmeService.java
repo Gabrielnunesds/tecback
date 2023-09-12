@@ -53,8 +53,5 @@ public class FilmeService {
     }
 
 
-    public List<Filme> listarFilmePorTitulo(String titulo){
-        return repository.findFilmeByTitulo(titulo);
-    }
 
 }
