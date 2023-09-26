@@ -1,9 +1,6 @@
 package br.com.fujideia.iesp.tecback.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,4 +25,6 @@ public class Cartao implements Serializable {
 
     private Integer cpf;
 
+    @ManyToOne
+    private Usuario usuario;
 }
