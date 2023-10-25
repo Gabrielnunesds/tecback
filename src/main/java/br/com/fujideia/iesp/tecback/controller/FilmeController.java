@@ -1,5 +1,6 @@
-package br.com.fujideia.iesp.tecback.web;
+package br.com.fujideia.iesp.tecback.controller;
 
+import br.com.fujideia.iesp.tecback.model.DTO.FilmeListaDTO;
 import br.com.fujideia.iesp.tecback.model.Filme;
 import br.com.fujideia.iesp.tecback.service.FilmeService;
 import org.apache.coyote.Response;
@@ -49,7 +50,13 @@ public class FilmeController {
         }
     }
 
+    @GetMapping("/genero/{genero}")
+    public ResponseEntity<List<Filme>> listarFilmePorGenero(@PathVariable String nomeGenero){
+        return ResponseEntity.ok(service.listarFilmesPorGenero(nomeGenero));
+    }
 
-
-
+    @GetMapping("/filme/nome/genero")
+    public ResponseEntity<List<FilmeListaDTO>> listarFilmeNomeGenero(){
+        return ResponseEntity.ok(service.listaFilmeNomeGenero());
+    }
 }
